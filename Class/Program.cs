@@ -11,29 +11,30 @@ namespace Class
     {
         static void Main(string[] args)
         {
-            Student s1 = new Student("David", 9);
-            Student s2 = new Student("Anna", 8);
-            Student s3 = new Student("Lily", 7);
-
-            s1.DisplayInfo();
-            s2.DisplayInfo();
-            s3.DisplayInfo();
-
-            // Tạo mảng danh sách học sinh
-            Student[] students = { s1, s2, s3 };
-
-            // Tìm học sinh giỏi nhất
-            Student Top = Student.FindTopStudent(students);
-            Console.WriteLine("\nTop student: " + Top.GetName());
-            Console.WriteLine("Top score: " + Top.GetScore());
+            Student student1 = new Student("David", 8.0);
+            Student student2 = new Student("Anna", 9.6);
+            Student student3 = new Student("Lily", 7.8);
+            Student student4 = new Student("John", 5.5);
+    
+            Student[] students = { student1, student2, student3, student4 };
+    
+            Console.WriteLine("Name: " + student1.GetName());
+            Console.WriteLine("Score: " + student1.GetScore());
+            Console.WriteLine("Passed: " + student1.IsPassed());
+            Console.WriteLine("Classification: " + student1.GetClassification());
             Console.WriteLine();
 
-            // Gọi hàm tính điểm trung bình qua static
-            double avg = Student.CalculateAverageScore(students);
-            Console.WriteLine("Average score: " + avg);
-
-            Console.ReadLine(); // Giữ màn hình Console
+            Console.WriteLine("Total students: " + Student.GetTotalStudents());
+    
+            Student topStudent = Student.FindTopStudent(students);
+            Console.WriteLine("Top student: " + topStudent.GetName());
+            Console.WriteLine("Top score: " + topStudent.GetScore());
+            Console.WriteLine();
+    
+            double average = Student.CalculateAverageScore(students);
+    
+            Console.WriteLine("Average score: " + average);
+            Console.ReadLine(); 
         }
     }
 }
-//CODE INTERFACE /UI TRONG FILE PROGRAM.CS CUA FILE PROPERTIES
