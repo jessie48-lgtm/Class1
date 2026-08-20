@@ -9,77 +9,73 @@ namespace Class.Entities
 {
     public class Student
     {
+        // Fields
         private string name;
         private double score;
-        public static int totalStudent;
-
+        private static int totalStudents;
+    
+        // Constructor
         public Student(string name, double score)
         {
             this.name = name;
             this.score = score;
-            totalStudent++;
+            totalStudents++;
         }
-
+    
+        // Instance Methods
         public string GetName()
         {
-            return name;
+            return this.name;
         }
-
+    
         public double GetScore()
         {
-            return score;
+            return this.score;
         }
-
+    
         public bool IsPassed()
         {
-            if (score >= 5.0)
+            if (this.score >= 5.0)
                 return true;
             else
                 return false;
         }
-
-        public string GetClassfication()
+        
+        public string GetClassification()
         {
             string result = "";
-            if (score >= 8)
+            if (this.score >= 8.0)
                 result = "Excellent";
-            else if (score >= 6.5)
+            else if (this.score >= 6.5)
                 result = "Good";
-            else if (score >= 5)
+            else if (this.score >= 5.0)
                 result = "Average";
             else
                 result = "Weak";
-
             return result;
         }
-
-        public static int GetTotalStudent()
+    
+        // Static Methods
+        public static int GetTotalStudents()
         {
-            return totalStudent;
+            return totalStudents;
         }
-
-        public void DisplayInfo()
-        {
-            Console.WriteLine($"Name: {name} | Score: {score}");
-            Console.WriteLine("Passed: " + IsPassed());
-            Console.WriteLine("Classfication: " + GetClassfication());
-            Console.WriteLine("The total of student: " + GetTotalStudent());
-        }
+        
+        
 
         public static Student FindTopStudent(Student[] students)
         {
-            Student Top = students[0];
+            Student topStudent = students[0];
             for (int i = 1; i < students.Length; i++)
             {
-                if (students[i].score > Top.score)
+                if (students[i].score > topStudent.score)
                 {
-                    Top = students[i];
+                    topStudent = students[i];
                 }
             }
-            return Top;
+            return topStudent;
         }
 
-        // Đã chuyển thành static để gọi trực tiếp từ Class Student
         public static double CalculateAverageScore(Student[] students)
         {
             double sum = 0;
@@ -87,8 +83,9 @@ namespace Class.Entities
             {
                 sum += students[i].score;
             }
-            double avgscore = sum / students.Length;
-            return avgscore;
+            double average = sum / students.Length;
+            return average;
         }
     }
-}
+} ////CODE INTERFACE /UI ( O PROGRAM.CS ) CUA FILE PROPERTIES
+
