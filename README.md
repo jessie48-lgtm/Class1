@@ -12,7 +12,7 @@ Reflection Questions (after completing the exercise)
 •	GetClassification() (Instance): Needs the specific score of a single student to calculate their grade.
 3. Calling student1.GetTotalStudents():
 •	Invalid: C# does NOT allow calling static methods through an object.
-•	Compiler Error: The code will fail to compile (Error CS0176).
+•	Compiler Error: The code will fail to compile .
 4. Accessing static methods & Good practice:
 •	Class name (Student.GetTotalStudents()): The ONLY correct way to call it in C#.
 •	Best practice: Using the class name makes it crystal clear that the method belongs to the entire class, not a single object.
