@@ -36,3 +36,4 @@ namespace Class
         }
     }
 }
+//code inferface owr trong program.cs
