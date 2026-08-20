@@ -36,4 +36,4 @@ namespace Class
         }
     }
 }
-//code inferface owr trong program.cs
+//CODE INTERFACE /UI TRONG FILE PROGRAM.CS CUA FILE PROPERTIES
